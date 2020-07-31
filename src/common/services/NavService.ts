@@ -16,31 +16,36 @@ interface IEnvironmentConfig {
   configSite: string;
   searchSite: string;
   webServiceUrl: string;
+  projectPrefix: string;
 }
 const environments: { [key: string]: IEnvironmentConfig } = {
   [Environment.DEV]: {
-    portalSite: "/sites/projects",
+    portalSite: "/sites/ProjectPortal",
     configSite: "/sites/config",
     searchSite: "/sites/search",
     webServiceUrl: "https://devoigsfcluster.theglobalfund.org",
+    projectPrefix: "/sites/projects-",
   },
   [Environment.TEST]: {
     portalSite: "",
     configSite: "",
     searchSite: "",
     webServiceUrl: "",
+    projectPrefix: "",
   },
   [Environment.QA]: {
     portalSite: "",
     configSite: "",
     searchSite: "",
     webServiceUrl: "",
+    projectPrefix: "",
   },
   [Environment.PROD]: {
     portalSite: "",
     configSite: "",
     searchSite: "",
     webServiceUrl: "",
+    projectPrefix: "",
   },
 };
 
@@ -48,7 +53,6 @@ export class NavService {
   public static getEnvironment() {
     // Logic to get env here
     // return the correct env
-    log('Get environment', Environment.DEV);
     return Environment.DEV;
   }
 
@@ -151,5 +155,11 @@ export class NavService {
 
   public static getConfigSiteUrl() {
     return environments[this.getEnvironment()].configSite;
+  }
+
+  public static getProjectNumberFromUrl() {
+    const prefix = environments[this.getEnvironment()].projectPrefix;
+    const pathName = this.getPathName(2);
+    return pathName.replace(prefix, '');
   }
 }

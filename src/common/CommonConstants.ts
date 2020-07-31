@@ -2,6 +2,7 @@ export class UserGroupConstants {
 }
 
 export class RootListConstants {
+    public static readonly ProjectsLists = 'ProjectsList';
 }
 
 export class ConfigurationListConstants {

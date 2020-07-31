@@ -1,0 +1,53 @@
+@import '~office-ui-fabric-react/dist/sass/_References.scss';
+@import '../../../common/styles/variable.module.scss';
+
+.projectInformation {
+  display: flex;
+  margin: $spacing;
+
+  .projectMetadata {
+    display: flex;
+    flex-direction: column;
+
+    .projectTitle {
+      font-size: $ms-font-size-xxl;
+    }
+
+    .projectDetailContainer {
+      display: flex;
+      margin: 0 (-$spacing);
+
+      .projectDetail {
+        margin: 0 $spacing;
+
+        .detailLabel {  
+          font-size: $ms-font-size-m;
+        }
+  
+        .detailValue {
+          font-weight: $ms-font-weight-semibold;
+          font-size: $ms-font-size-m-plus;
+        }
+      }
+    }
+  }
+
+  .projectLeaders {
+    display: flex;
+    flex-direction: column;
+    font-size: $ms-font-size-m;
+    background-color: $secondary-accent;
+
+    .projectRole {
+      display: flex;
+
+      .roleTitle {
+        margin-left: 5px;
+      }
+
+      .personName {
+        font-weight: 500;
+      }
+    }
+  }
+}
