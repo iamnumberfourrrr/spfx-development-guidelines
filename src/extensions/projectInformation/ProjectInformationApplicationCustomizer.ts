@@ -1,3 +1,4 @@
+import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { override } from "@microsoft/decorators";
 import { Log } from "@microsoft/sp-core-library";
 import { BaseApplicationCustomizer, PlaceholderContent, PlaceholderName } from "@microsoft/sp-application-base";
@@ -6,7 +7,6 @@ import * as ReactDOM from 'react-dom';
 
 import * as strings from "ProjectInformationApplicationCustomizerStrings";
 import ProjectInformation from "./components/ProjectInformation";
-import { log } from "../../common/Utils";
 import styles from '../../common/styles/global.module.scss';
 
 const LOG_SOURCE: string = "ProjectInformationApplicationCustomizer";
@@ -46,6 +46,10 @@ export default class ProjectInformationApplicationCustomizer extends BaseApplica
         PlaceholderName.Top,
         { onDispose: this._onDispose }
       );
+      
+      // Force to load font-face
+      const documentationIcon = React.createElement(Icon, { iconName: 'Documentation'});
+      ReactDOM.render(documentationIcon, this._topPlaceholder.domElement);
 
       const PI = React.createElement(ProjectInformation, { context: this.context });
       ReactDOM.render(PI, this._topPlaceholder.domElement);

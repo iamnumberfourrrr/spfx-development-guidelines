@@ -3,50 +3,94 @@
 
 .projectInformation {
   display: flex;
-  margin: $spacing;
+  margin: $spacing * 1.5;
 
-  .projectMetadata {
-    display: flex;
-    flex-direction: column;
-
-    .projectTitle {
-      font-size: $ms-font-size-xxl;
-    }
-
-    .projectDetailContainer {
+  .leftSection {
+    flex: 1 0 40%;
+    .projectMetadata {
       display: flex;
-      margin: 0 (-$spacing);
-
-      .projectDetail {
-        margin: 0 $spacing;
-
-        .detailLabel {  
-          font-size: $ms-font-size-m;
-        }
+      flex-direction: column;
   
-        .detailValue {
-          font-weight: $ms-font-weight-semibold;
-          font-size: $ms-font-size-m-plus;
+      .projectTitle {
+        font-size: 36px;
+        margin-bottom: $spacing;
+      }
+  
+      .projectDetailContainer {
+        display: flex;
+        margin: 0 (-$spacing);
+  
+        .projectDetail {
+          margin: 0 $spacing;
+  
+          .detailLabel {  
+            font-size: $ms-font-size-m;
+          }
+    
+          .detailValue {
+            font-weight: $ms-font-weight-semibold;
+            font-size: $ms-font-size-m-plus;
+          }
         }
       }
     }
   }
 
-  .projectLeaders {
+  .rightSection {
     display: flex;
-    flex-direction: column;
-    font-size: $ms-font-size-m;
-    background-color: $secondary-accent;
+    position: relative;
+    flex: 1 0 40%;
 
-    .projectRole {
+    .projectLeaders {
       display: flex;
-
-      .roleTitle {
-        margin-left: 5px;
+      font-size: $ms-font-size-m;
+      background-color: #F9F9F9;
+      position: absolute;
+      bottom: 0;
+  
+      .projectRoles {
+        padding: 10px 20px;
+        color: #7D7F7F;
+        font-weight: 600;
       }
 
-      .personName {
-        font-weight: 500;
+      .memberNames {
+        padding: 10px 20px;
+        color: #7D7F7F;
+        font-weight: 600;
+      }
+    }
+  
+    $statuses: ('green': $statusGreen, 'yellow': $statusYellow, 'red': $statusRed, 'grey': $statusGrey);
+  
+    .projectStatuses {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 10px 20px;
+      background-color: #F9F9F9;
+  
+      @each $status, $color in $statuses {
+        .#{$status} {
+          margin: 0 5px;
+          
+          label {
+            color: #7D7F7F;
+            font-weight: 600;
+          }
+  
+          > div > button {
+            width: 70px;
+            background: $color;
+            &:hover {
+              cursor: inherit;
+            }
+            > div {
+              color: $color;
+            }
+          }
+        }
       }
     }
   }

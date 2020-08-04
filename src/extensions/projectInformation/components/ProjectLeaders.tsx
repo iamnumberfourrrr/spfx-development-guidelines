@@ -1,11 +1,10 @@
 import * as React from 'react';
 import styles from './ProjectInformation.module.scss';
+import { BaseComponentContext } from '@microsoft/sp-component-base';
 import { Project } from '../../../common/model/Project';
-import { ProjectService } from '../../../common/services/ProjectService';
-import { ServiceFactory } from '../../../common/services/ServiceFactory';
 import { NavService } from '../../../common/services/NavService';
 import { IEnsureUser, UserService } from '../../../common/services/PeoplePickerService';
-import { BaseComponentContext } from '@microsoft/sp-component-base';
+import { ServiceFactory } from '../../../common/services/ServiceFactory';
 
 export interface ProjectLeadersProps {
   project: Project;
@@ -44,14 +43,14 @@ export default class ProjectLeaders extends React.Component<ProjectLeadersProps,
   public render() {
     const { projectManager, salesManager } = this.state;
     return <div className={styles.projectLeaders}>
-      <div className={styles.projectRole}>
-        <div className={styles.roleTitle}>Project Manager: </div>
-        <div className={styles.personName}>{projectManager && projectManager.Title}</div>
+      <div className={styles.projectRoles}>
+        <div>Project Manager</div>
+        <div>Sales Manager</div>
       </div>
-      <div className={styles.projectRole}>
-        <div className={styles.roleTitle}>Sales Manager: </div>
-        <div className={styles.personName}>{salesManager && salesManager.Title}</div>
+      <div className={styles.memberNames}>
+        <div>{projectManager && projectManager.Title}</div>
+        <div>{salesManager && salesManager.Title}</div>
       </div>
-    </div>
+    </div>;
   }
 }

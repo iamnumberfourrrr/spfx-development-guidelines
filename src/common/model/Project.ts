@@ -8,16 +8,17 @@ export enum Status {
 }
 
 export class Project extends IBaseSPListItem {
-  Title: string;
-  ProjectNumber: number;
-  Client: string;
-  Unit: string;
-  ProjectManagerId: number;
-  SalesManagerId: number;
-  FinanceStatus: Status;
-  QualityStatus: Status;
-  ScopeStatus: Status;
-  TeamStatus: Status;
-  TimeStatus: Status;
-  ProjectMembersId: Array<number>;
+  public Title: string;
+  public ProjectNumber: number;
+  public Client: string;
+  public Unit: string;
+  public ProjectManagerId: number;
+  public SalesManagerId: number;
+  public FinanceStatus: Status;
+  public QualityStatus: Status;
+  public ScopeStatus: Status;
+  public TeamStatus: Status;
+  public RelationStatus: Status;
+  public TimeStatus: Status;
+  public ProjectMembersId: Array<number>;
 }

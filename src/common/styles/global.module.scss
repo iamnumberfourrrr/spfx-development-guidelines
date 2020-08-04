@@ -2,4 +2,36 @@
   :global(#spSiteHeader) {
     display: none;
   }
+
+  :global(div[name="Home"]) {
+    > a::before {
+      content: '\E80F';
+      font-family: 'FabricMDL2Icons-1';
+      padding-left: 4px;
+    }
+  }
+
+  :global(div[name="Documents"]) {
+    > a::before {
+      content: '\EC17';
+      font-family: 'FabricMDL2Icons-5';
+      padding-left: 4px;
+    }
+  }
+
+  :global(div[name="Contacts"]) {
+    > a::before {
+      content: '\E717';
+      font-family: 'FabricMDL2Icons-0';
+      padding-left: 4px;
+    }
+  }
+
+  :global(div[name="Calendar"]) {
+    > a::before {
+      content: '\E787';
+      font-family: 'FabricMDL2Icons';
+      padding-left: 4px;
+    }
+  }
 }
