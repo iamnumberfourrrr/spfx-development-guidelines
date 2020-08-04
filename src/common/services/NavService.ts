@@ -162,4 +162,10 @@ export class NavService {
     const pathName = this.getPathName(2);
     return pathName.replace(prefix, '');
   }
+
+  public static isProjectPage() {
+    const prefix = environments[this.getEnvironment()].projectPrefix;
+    const pathName = this.getPathName(2);
+    return pathName.startsWith(prefix);
+  }
 }

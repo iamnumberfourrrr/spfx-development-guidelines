@@ -1,3 +1,4 @@
+import { NavService } from './../../common/services/NavService';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { override } from "@microsoft/decorators";
 import { Log } from "@microsoft/sp-core-library";
@@ -50,9 +51,11 @@ export default class ProjectInformationApplicationCustomizer extends BaseApplica
       // Force to load font-face
       const documentationIcon = React.createElement(Icon, { iconName: 'Documentation'});
       ReactDOM.render(documentationIcon, this._topPlaceholder.domElement);
-
-      const PI = React.createElement(ProjectInformation, { context: this.context });
-      ReactDOM.render(PI, this._topPlaceholder.domElement);
+      
+      if (NavService.isProjectPage()) {
+        const PI = React.createElement(ProjectInformation, { context: this.context });
+        ReactDOM.render(PI, this._topPlaceholder.domElement);
+      }
     }
   }
 
