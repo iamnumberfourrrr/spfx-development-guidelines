@@ -1,5 +1,5 @@
-import { UserService } from './../../common/services/PeoplePickerService';
-import { ServiceFactory } from './../../common/services/ServiceFactory';
+import { UserService } from '../../common/services/PeoplePickerService';
+import { ServiceFactory } from '../../common/services/ServiceFactory';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
@@ -9,19 +9,19 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'ProjectsListWebPartStrings';
-import ProjectsList from './components/ProjectsList';
-import { IProjectsListProps } from './components/ProjectsList';
+import * as strings from 'ProjectTeamMembersWebPartStrings';
+import ProjectsList from './components/ProjectTeamMembers';
+import { IProjectTeamMembersProps } from './components/ProjectTeamMembers';
 import { log } from '../../common/Utils';
 
-export interface IProjectsListWebPartProps {
+export interface IProjectTeamMembersWebPartProps {
   description: string;
 }
 
-export default class ProjectsListWebPart extends BaseClientSideWebPart<IProjectsListWebPartProps> {
+export default class ProjectsListWebPart extends BaseClientSideWebPart<IProjectTeamMembersWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IProjectsListProps> = React.createElement(
+    const element: React.ReactElement<IProjectTeamMembersProps> = React.createElement(
       ProjectsList,
       {
         context: this.context

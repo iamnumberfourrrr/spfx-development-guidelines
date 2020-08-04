@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "projects-list-web-part": {
+    "project-team-members-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/projectsList/ProjectsListWebPart.js",
-          "manifest": "./src/webparts/projectsList/ProjectsListWebPart.manifest.json"
+          "entrypoint": "./lib/webparts/projectTeamMembers/ProjectTeamMembersWebPart.js",
+          "manifest": "./src/webparts/projectTeamMembers/ProjectTeamMembersWebPart.manifest.json"
         }
       ]
     },
@@ -21,7 +21,7 @@
   },
   "externals": {},
   "localizedResources": {
-    "ProjectsListWebPartStrings": "lib/webparts/projectsList/loc/{locale}.js",
+    "ProjectTeamMembersWebPartStrings": "lib/webparts/projectTeamMembers/loc/{locale}.js",
     "ProjectInformationApplicationCustomizerStrings": "lib/extensions/projectInformation/loc/{locale}.js"
   }
 }

@@ -11,7 +11,7 @@ export abstract class BaseReactiveComponent<P extends BaseReactiveComponentProps
     protected done$ = new Rx.Subject();
 
     public componentWillUnmount() {
-        this.componentDestroy();       
+        this.componentDestroy();
     }
 
     public componentDestroy() {

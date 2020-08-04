@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BaseComponentContext } from '@microsoft/sp-component-base';
 import { Spinner } from "office-ui-fabric-react/lib/Spinner";
-import { BaseReactiveComponent } from "../../../common/components/BaseReactiveComponent";
+import { BaseReactiveComponent } from "../../../common/components/baseComponents/BaseReactiveComponent";
 import { Project } from "../../../common/model/Project";
 import { NavService } from "../../../common/services/NavService";
 import { ProjectService } from "../../../common/services/ProjectService";
