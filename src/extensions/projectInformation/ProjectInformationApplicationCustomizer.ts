@@ -50,7 +50,9 @@ export default class ProjectInformationApplicationCustomizer extends BaseApplica
       
       // Force to load font-face
       const documentationIcon = React.createElement(Icon, { iconName: 'Documentation'});
+      const homeIcon = React.createElement(Icon, { iconName: 'Home'});
       ReactDOM.render(documentationIcon, this._topPlaceholder.domElement);
+      ReactDOM.render(homeIcon, this._topPlaceholder.domElement);
       
       if (NavService.isProjectPage()) {
         const PI = React.createElement(ProjectInformation, { context: this.context });
